@@ -26,19 +26,27 @@ $ curl -s http://127.0.0.1:42000/prompt/1e18e1d50423fa29 | jq .
   "ms_per_token": 404.632
 }
 ```
-
-### Building
+### Building alpaca.http
 
 Initialize the repository's submodule(s):
 
 ```shell
+$ git clone https://github.com/rayregula/alpaca.http
+$ cd alpaca.http
+
 $ git submodule update --init --recursive
-Submodule 'deps/cpp-httplib' (https://github.com/yhirose/cpp-httplib.git) registered for path 'deps/cpp-httplib'
-Cloning into '/home/noname/repos/alpaca.http/deps/cpp-httplib'...
-Submodule path 'deps/cpp-httplib': checked out 'a66a013ed78dee11701d6075c6b713307004a126'
+#Submodule 'deps/cpp-httplib' (https://github.com/yhirose/cpp-httplib.git) registered for path 'deps/cpp-httplib'
+#Cloning into '/home/noname/repos/alpaca.http/deps/cpp-httplib'...
+#Submodule path 'deps/cpp-httplib': checked out 'a66a013ed78dee11701d6075c6b713307004a126'
+
+$ #apt install build-tools # if missing gcc/g++ (on linux)
+
+make chat
+./chat
 ```
 
-Then simply follow the [Building from Source (MacOS/Linux)](#building-from-source-macoslinux) instructions below (has not been tested on Windows).
+
+(following is for alpaca.cpp not alpaca.http) Then simply follow the [Building from Source (MacOS/Linux)](#building-from-source-macoslinux) instructions below (has not been tested on Windows).
 
 ### Running
 
